@@ -1,0 +1,1807 @@
+<?
+date_default_timezone_set('Europe/Istanbul');
+error_reporting(0);
+include("init/class.php");
+?>
+<?
+if($_GET["tip"]==3) {
+?>
+<? if(base64_decode($_GET["id"])==1) { $paket="Rasping"; $fiyat="1 Sitzungen ingesamt 129€"; } $odeme="129"; $seans_ad ="1 Sitzungen"; ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Rasping"; $fiyat="5 Sitzungen ingesamt 499€"; } $odeme="499"; $seans_ad ="5 Sitzungen"; ?>
+<? if(base64_decode($_GET["id"])==6) { $paket="Rasping"; $fiyat="6 Sitzungen ingesamt 799€"; } $odeme="799"; $seans_ad ="6 Sitzungen"; ?>
+<? if(base64_decode($_GET["id"])==8) { $paket="Rasping"; $fiyat="10 Sitzungen ingesamt 799€"; } $odeme="799"; $seans_ad ="10 Sitzungen"; ?>
+<? if(base64_decode($_GET["id"])==9) { $paket="Rasping"; $fiyat="Nur das Kinn ingesamt 50€"; } $odeme="50"; $seans_ad ="Nur das Kinn"; ?>
+<? }else if($_GET["tip"]==4) { ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Vanquish Me"; $fiyat="4 Sitzungen ingesamt 1300€"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Vanquish Me"; $fiyat="4+2 Sitzungen ingesamt 1550€"; } ?>
+<? }else if($_GET["tip"]==5) { ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Exilis Ultra 360"; $fiyat="4 Sitzungen ingesamt 1000€"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Exilis Ultra 360"; $fiyat="4+2 Sitzungen ingesamt 1150€"; } ?>
+<? if(base64_decode($_GET["id"])==6) { $paket="Exilis Ultra 360"; $fiyat="Gesicht und Dekolte <br/>4 Sitzungen ingesamt 500€"; } ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Exilis Ultra 360"; $fiyat="Gesicht und Dekolte <br/>4+2 Sitzungen ingesamt 700€"; } ?>
+<? }else if($_GET["tip"]==6) { ?>
+<? if(base64_decode($_GET["id"])==1) { $paket="Botox"; $fiyat="1 Zone 150€"; } ?>
+<? if(base64_decode($_GET["id"])==2) { $paket="Botox"; $fiyat="2 Zonen 250€"; } ?>
+<? if(base64_decode($_GET["id"])==3) { $paket="Botox"; $fiyat="3 Zonen 350€"; } ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Botox"; $fiyat="4 Zonen 400€"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Botox"; $fiyat="Achsel 450€"; } ?>
+<? }else if($_GET["tip"]==7) { ?>
+<? if(base64_decode($_GET["id"])==1) { $paket="Abnehmprogramm mit nicht operativer Liposuction und Straffung"; $paket2="Abnehmprogramm Paket 3"; $fiyat="2600€"; $eski="2600€"; } ?>
+<? }else if($_GET["tip"]==8) { ?>
+<? if(base64_decode($_GET["id"])==2) { $paket="Abnehmprogramm Basic"; $paket2="Abnehmprogramm Paket 4"; $fiyat="1500€"; $eski="3700€"; } ?>
+<? }else if($_GET["tip"]==9) { ?>
+<? if(base64_decode($_GET["id"])==3) { $paket="Abnehmpaket mit nicht operativer Liposuction und gleichzeitiger Muskelaufbau"; $paket2="Abnehmprogramm Paket 5"; $fiyat="2900€"; $eski="2900€"; } ?>
+<? }else if($_GET["tip"]==10) { ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Abnehmprogramm Basic"; $paket2="Abnehmprogramm Paket 1"; $fiyat="1000€"; $eski="1500€";} ?>
+<? }else if($_GET["tip"]==11) { ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Abnehmprogramm mit nicht operativer Liposuction"; $paket2="Abnehmprogramm Paket 2"; $fiyat="2200€"; $eski="2200€"; } ?>
+<? }else if($_GET["tip"]==12) { ?>
+<? if(base64_decode($_GET["id"])==6) { $paket="Abnehmprogramm für Körper"; $paket2="Gesicht Paket 1"; $fiyat="999€"; $eski="999€"; } ?>
+<? }else if($_GET["tip"]==13) { ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Abnehmprogramm für Körper"; $paket2="Gesicht Paket 2"; $fiyat="1599€"; $eski="1599€"; } ?>
+<? }else if($_GET["tip"]==14) { ?>
+<? 
+if(base64_decode($_GET["id"])==1) { $paket="10 sitzungen"; $paket2="Andubalance Therapie"; $fiyat="250€"; $eski="250€"; } 
+if(base64_decode($_GET["id"])==2) { $paket="15 sitzungen Therapie"; $paket2="Andubalance Therapie"; $fiyat="300€"; $eski="300€"; } 
+?>
+<? } ?>
+
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+
+<meta charset="utf-8">
+<title><? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11) {?> <?=$paket2;?><? }else{?> <?=$paket;?><? } ?> Formular - Cağla Aytaç Gmbh</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link href="all.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/component.css" rel="stylesheet">
+<script type="text/javascript" src="jquery/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="jquery/modernizr.custom.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Poppins:300,400,500,600,700,800,900|Dancing+Script:400,600,700|Signika:300,400,600,700&display=swap&subset=latin-ext" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Bad+Script|Courgette|Kalam:300,400,700|Neucha|Merienda:400,700&display=swap&subset=latin-ext" rel="stylesheet"> 
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+</head>
+<body>
+
+
+<? include("init/head.php");?>
+
+
+
+<div class="bgTop2"></div>
+
+<!--/-->
+<div class="linkBg">
+<div class="hCont">
+<div class="linkBas"><i class="fa fa-clipboard"></i> <? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==14) {?> <?=$paket2;?><? }else{?> <?=$paket;?><? } ?> </div>
+</div>
+</div>
+<!--/-->
+
+
+<? if($_GET["step"]==1) {?>
+
+<!--step-1-->
+<div class="hCont" id="down-1">
+<div class="pagMotto"><? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==14) {?>  <?=$paket2;?><? }else{?> <?=$paket;?><? } ?></div>
+<div class="pagBas-2" style="text-align:left;"><strong><? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13 or $_GET["tip"]==14) {?>  <?=$paket2;?><? }else{?> <?=$paket;?><? } ?></strong> Informationsformular</div>
+
+
+<?
+if($_GET["tip"]==3) {
+?>
+<form id="pktForms">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+
+<!--sozlesme-->
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+
+
+<div class="basLine2">
+<img src="img/rasping.jpg" alt="Rasping" id="imgs">
+Ihre behandelnde Fachkraft wird mit Ihnen Ihre spezielle Behandlungsbedürfnisse besprechen. Es wird empfohlen, 4-8 Behandlungen im Abstand von 7-14 Tagen durchzuführen. Je nach Schweregrad Ihrer Erkrankung können weitere Behandlungen erforderlich sein. Um optimale Ergebnisse zu erzielen, ist es wichtig, dass Sie sich an den für Sie erstellten Behandlungsplan halten. Die Ergebnisse werden sich in der Regel in den nächsten 3 Monaten nach der letzten Sitzung weiter verbessern.<br/><br/> 
+Die Behandlung ist in der Regel schmerzfrei, und es ist keine Betäubung erforderlich. Sie werden während oder kurz nach der Behandlung ein sehr intensives Wärmegefühl verspüren. Das Verfahren erfordert keine Erholungszeit. In der Regel können Sie direkt nach der Behandlung wieder Ihrem Alltag nachgehen.<br/><br/>
+Der zu behandelnde Bereich muss frei von Haaren sein, und es darf kein Make-up oder Cremes/Lotionen auf der Haut vorhanden sein. Ich bestätige, dass mir geraten wurde, den Bereich vor dem Eingriff zu rasieren, oder der Bereich wird bei der Untersuchung rasiert.<br/><br/>
+Wenn der Behandlungsbereich am Körper liegt, kommen Sie bitte gut hydriert zu Ihrem Termin. Idealerweise sollten Sie 2 Tage vor und am Tag der Behandlung Flüssigkeit zu sich nehmen, da dies zu einer angenehmeren und wirksameren Behandlung führt.<br/><br/>
+Am Tag der Behandlung sollten Sie bequeme Kleidung tragen, damit der Behandlungsbereich leicht zugänglich ist.<br/><br/>
+Ich erkenne an, dass der Behandlungserfolg durch Rauchen oder übermäßigen Alkoholkonsum beeinträchtigt werden kann, ebenso wie durch Essstörungen, laufende Medikamente oder unzureichende Flüssigkeitszufuhr. Auch wenn keine spezielle Diät erforderlich ist, werden Sie aufgefordert, sich gesund zu ernähren, um die Ergebnisse zu fördern und zu erhalten.<br/><br/>
+Mir ist bekannt, dass Schwangerschaft und Stillen kontraindiziert sind und schwangere Frauen sich der Behandlung nicht unterziehen dürfen.<br/><br/>
+Mir ist bekannt, dass mit den Behandlungen mit dem Rasping System bestimmte Risiken verbunden sind, unter anderem Rötungen, sehr intensives Wärmegefühl oder leichte Schmerzen und trockene Haut.<br/><br/>
+Mir ist bekannt, dass die Behandlung das Risiko von Komplikationen oder Verletzungen aus bekannten oder unbekannten Gründen mit sich bringen kann, und ich übernehme diese Risiken freiwillig.<br/><br/>
+Ich verstehe, dass die Ergebnisse von Person zu Person variieren können und dass ein genaues Ergebnis nicht vorhergesagt werden kann. Es ist sehr unwahrscheinlich, aber es ist möglich, dass Sie nach dem Eingriff kein erkennbares Ergebnis spüren. Ich nehme zur Kenntnis, dass das Ergebnis möglicherweise nicht meinen Erwartungen entsprechen kann.<br/><br/>
+Ich bestätige, dass ich dieses Dokument vollständig gelesen habe und dass ich mit allen Bestimmungen einverstanden bin. Ich bestätige, dass ich die Möglichkeit hatte, Fragen zu stellen, und dass diese Fragen vollständig und zu meiner Zufriedenheit beantwortet wurden. Ich habe volles Verständis für die Behandlungsbedingungen, das Verfahren und mögliche Nebenwirkungen.<br/><br/>
+Ich nehme zur Kenntnis, dass meine Sitzung bei einer kurzfristigen Absage, die weniger als 48 Stunden ist, trotzdem vergütet wird. Wenn ich aus gesundheitlichen Bedingungen nicht teilnehmen kann, werde ich ein Attest vorlegen.
+<br/><br/>
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#000;"><?=$paket;?><br/><?=$fiyat;?></strong>
+</div>
+
+<br/>
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--sozlesme-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form1();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<!--andulasyon-->
+<?
+}else if($_GET["tip"]==14) {
+?>
+<form id="pktForms">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+
+<!--sozlesme-->
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+
+
+<div class="basLine2">
+<img src="img/rasping.jpg" alt="Rasping" id="imgs">
+In den Sitzungen werden personenbezogene Körperanalysen und individuelle Ernährungspläne von Cagla Aytac erstellt.<br/><br/>
+
+In der Regel findet die nächste Beratung nach zehn Tagen statt. Sie haben auch die Möglichkeit -wenn Sie die Sitzungen nicht jedes Mal vor Ort wahrnehmen können- über Whatsapp von Cagla Aytac angerufen zu werden (Mixberatung).<br/><br/>
+
+Zur Erstberatung kommen Sie zu uns. Die darauffolgenden 1-2 weiteren Sitzungen sollten ebenfalls in unseren Räumlichkeiten erfolgen. Entscheiden Sie sich weitere Sitzungen online durchzuführen, können Sie mit einer handelsüblichen Waage, die Sie besitzen, Ihr Gewicht messen. Dafür müssen Sie nicht zwingend eine Körperanalyse-Waage kaufen.<br/><br/>
+
+Zu jeder Onlineberatung wird ein neuer Ernährungsplan erstellt und per Whatsapp an Sie versendet. 
+<br/><br/>
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#000;"><?=$paket;?><br/><?=$fiyat;?></strong>
+</div>
+
+<br/>
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--sozlesme-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form1();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<? }else if($_GET["tip"]==4) { ?>
+<!--vanquish-me-->
+<form id="pktForms-2">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+<br/>
+
+<!--form-->
+<div class="basLine2" style="margin-top:-1px;">
+<img src="img/vanquish.png" alt="Vanquish me" id="imgs">
+Sie sind für eine Reihe von nicht-invasiven Behandlungen mit dem BTL Vanquish ME vorgesehen. Das Gerät ist für den Einsatz bei nicht-invasiven dermatologischen Verfahren vorgesehen. Das BTL Vanquish ME System ist ein Radiofrequenz (RF)-Gerät, das hohe Energie auf kontrollierte Weise an die dermalen und subkutanen Schichten der Haut abgibt.<br/><br/>
+Ihre behandelnde Fachkraft wird mit Ihnen Ihre spezielle Behandlungsbedürfnisse besprechen. Es wird empfohlen, 2-4 Behandlungen im Abstand von 7-14 Tagen durchzuführen. Je nach Schweregrad Ihrer Erkrankung können weitere Behandlungen erforderlich sein. Um optimale Ergebnisse zu erzielen, ist es wichtig, dass Sie sich an den für Sie erstellten Behandlungsplan halten. Die Ergebnisse werden sich in der Regel in den nächsten 3 Monaten nach der letzten Sitzung weiter verbessern.<br/><br/>
+Die Behandlung ist in der Regel schmerzfrei, und es ist keine Betäubung erforderlich. Sie werden während oder kurz nach der Behandlung ein sehr intensives Wärmegefühl verspüren. Das Verfahren erfordert keine Erholungszeit. In der Regel können Sie direkt nach der Behandlung wieder Ihrem Alltag nachgehen.<br/><br/>
+Der zu behandelnde Bereich muss frei von Haaren sein, und es darf kein Make-up oder Cremes/Lotionen auf der Haut vorhanden sein. Ich bestätige, dass mir geraten wurde, den Bereich vor dem Eingriff zu rasieren, oder der Bereich wird bei der Untersuchung rasiert.<br/><br/>
+Wenn der Behandlungsbereich am Körper liegt, kommen Sie bitte gut hydriert zu Ihrem Termin. Idealerweise sollten Sie 2 Tage vor und am Tag der Behandlung Flüssigkeit zu sich nehmen, da dies zu einer angenehmeren und wirksameren Behandlung führt.<br/><br/>
+Am Tag der Behandlung sollten Sie bequeme Kleidung tragen, damit der Behandlungsbereich leicht zugänglich ist. Sie werden gebeten, jeglichen Schmuck an der betreffenden Stelle abzulegen.<br/><br/>
+Ich erkenne an, dass der Behandlungserfolg durch Rauchen oder übermäßigen Alkoholkonsum beeinträchtigt werden kann, ebenso wie durch Essstörungen, laufende Medikamente oder unzureichende Flüssigkeitszufuhr. Auch wenn keine spezielle Diät erforderlich ist, werden Sie aufgefordert, sich gesund zu ernähren, um die Ergebnisse zu fördern und zu erhalten. 
+<br/><br/>
+
+<div style="padding:7px; background-color:#efefef; border-radius:6px;">Bitte geben Sie an, ob Sie gegenwärtig oder in der Vergangenheit eines der folgenden Probleme hatten:</div>
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Bakterielle oder virale Infektionen, akute Entzündungen, fiebrige Zustände  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Beeinträchtigtes Immunsystem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Isotretinoin (Aknebehandlung) in den letzten 12 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Krebs, Strahlentherapie   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Verbrennungen, Empfindlichkeitsstörungen oder schlechte Heilung im Behandlungsbereich   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Metall-Implantate   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Implantierbarer Herzschrittmacher oder automatischer Defibrillator/Kardioverter   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Intrauterinpessar  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ablativer / nicht-ablativer kosmetischer Eingriff (tiefer Peeling) in den letzten 3 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Aktive Kollagenerkrankungen, Sklerodem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Herz-Kreislauf-Erkrankungen, Krampfadern   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">IVF-Verfahren   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Akute Neuralgie und Neuropathie    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Blutkrankheiten, Blutungsgefahr, blutendes Gewebe, Magengeschwüre    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ekzem oder Rosazea   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Nieren- oder Leberversagen    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ausgeprägte Ödeme, Aszites, Exsudate    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Tuberkulose   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Sexuell übertragbare Infektion    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+
+Mir ist bekannt, dass Schwangerschaft und Stillen kontraindiziert sind und schwangere Frauen sich der Behandlung nicht unterziehen dürfen.<br/><br/>
+Mir ist bekannt, dass mit den Behandlungen mit dem BTL Vanquish ME System bestimmte Risiken verbunden sind, unter anderem Rötungen, sehr intensives Wärmegefühl oder leichte Schmerzen und trockene Haut.<br/><br/>
+Mir ist bekannt, dass die Behandlung das Risiko von Komplikationen oder Verletzungen aus bekannten oder unbekannten Gründen mit sich bringen kann, und ich übernehme diese Risiken freiwillig.<br/><br/>
+Ich bin damit einverstanden, dass ich vor und nach der Behandlung fotografiert, gemessen und gewogen werde, da dies für die medizinische Bewertung der Behandlungsergebnisse hilfreich ist. Die Informationen werden für medizinische Aufzeichnungen oder Marketingzwecke erfasst.<br/><br/>
+Ich verstehe, dass die Ergebnisse von Person zu Person variieren können und dass ein genaues Ergebnis nicht vorhergesagt werden kann. Es ist sehr unwahrscheinlich, aber es ist möglich, dass Sie nach dem Eingriff kein erkennbares Ergebnis spüren. Ich nehme zur Kenntnis, dass das Ergebnis möglicherweise nicht meinen Erwartungen entsprechen kann.<br/><br/>
+Ich bestätige, dass ich dieses Dokument vollständig gelesen habe und dass ich mit allen Bestimmungen einverstanden bin. Ich bestätige, dass ich die Möglichkeit hatte, Fragen zu stellen, und dass diese Fragen vollständig und zu meiner Zufriedenheit beantwortet wurden. Ich habe volles Verständis für die Behandlungsbedingungen, das Verfahren und mögliche Nebenwirkungen.<br/><br/>
+Ich nehme zur Kenntnis, dass meine Sitzung bei einer kurzfristigen Absage, die weniger als 48 Stunden ist, trotzdem vergütet wird. Wenn ich aus gesundheitlichen Bedingungen nicht teilnehmen kann, werde ich ein Attest vorlegen.
+
+
+<br/><br/>
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#000;"><?=$paket;?><br/><?=$fiyat;?></strong>
+</div>
+
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--form-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form2();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<!--vanquish-me-->
+<? }else if($_GET["tip"]==5) { ?>
+<!--exilis-ultra-->
+<form id="pktForms-3">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+<br/>
+
+<!--form-->
+<div class="basLine2" style="margin-top:-1px;">
+<img src="img/exilis.png" alt="Exilis 360" id="imgs">
+Sie sind für eine Reihe von nicht-invasiven Behandlungen mit dem BTL Exilis-System vorgesehen. Das Gerät ist für den Einsatz bei nicht-invasiven dermatologischen Verfahren vorgesehen. Das BTL Exilis System ist ein Radiofrequenz (RF)-Gerät, das hohe Energie auf kontrollierte Weise an die dermalen und subkutanen Schichten der Haut abgibt.<br/><br/>
+Ihre behandelnde Fachkraft wird mit Ihnen Ihre spezielle Behandlungsbedürfnisse besprechen. Es wird empfohlen, 2-4 Behandlungen im Abstand von 7-14 Tagen durchzuführen. Je nach Schweregrad Ihrer Erkrankung können weitere Behandlungen erforderlich sein. Um optimale Ergebnisse zu erzielen, ist es wichtig, dass Sie sich an den für Sie erstellten Behandlungsplan halten. Die Ergebnisse werden sich in der Regel in den nächsten 3 Monaten nach der letzten Sitzung weiter verbessern.<br/><br/>
+Die Behandlung ist in der Regel schmerzfrei, und es ist keine Betäubung erforderlich. Sie werden während oder kurz nach der Behandlung ein sehr intensives Wärmegefühl verspüren. Das Verfahren erfordert keine Erholungszeit. In der Regel können Sie direkt nach der Behandlung wieder Ihrem Alltag nachgehen. <br/><br/>
+Der zu behandelnde Bereich muss frei von Haaren sein, und es darf kein Make-up oder Cremes/Lotionen auf der Haut vorhanden sein. Ich bestätige, dass mir geraten wurde, den Bereich vor dem Eingriff zu rasieren, oder der Bereich wird bei der Untersuchung rasiert.<br/><br/>
+Wenn der Behandlungsbereich am Körper liegt (gilt nicht für Gesichts- oder Vaginal-/Vulva Behandlungen), kommen Sie bitte gut hydriert zu Ihrem Termin. Idealerweise sollten Sie 2 Tage vor und am Tag der Behandlung Flüssigkeit zu sich nehmen, da dies zu einer angenehmeren und wirksameren Behandlung führt.<br/><br/>
+Am Tag der Behandlung sollten Sie bequeme Kleidung tragen, damit der Behandlungsbereich leicht zugänglich ist. Sie werden gebeten, jeglichen Schmuck an der betreffenden Stelle abzulegen.<br/><br/>
+Ich erkenne an, dass der Behandlungserfolg durch Rauchen oder übermäßigen Alkoholkonsum beeinträchtigt werden kann, ebenso wie durch Essstörungen, laufende Medikamente oder unzureichende Flüssigkeitszufuhr. Auch wenn keine spezielle Diät erforderlich ist, werden Sie aufgefordert, sich gesund zu ernähren, um die Ergebnisse zu fördern und zu erhalten.
+<br/><br/>
+
+<div style="padding:7px; background-color:#efefef; border-radius:6px;">Bitte geben Sie an, ob Sie gegenwärtig oder in der Vergangenheit eines der folgenden Probleme hatten:</div>
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Bakterielle oder virale Infektionen, akute Entzündungen, fiebrige Zustände  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Beeinträchtigtes Immunsystem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Isotretinoin (Aknebehandlung) in den letzten 12 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Krebs, Strahlentherapie   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Verbrennungen, Empfindlichkeitsstörungen oder schlechte Heilung im Behandlungsbereich   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Metall-Implantate   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Implantierbarer Herzschrittmacher oder automatischer Defibrillator/Kardioverter   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Intrauterinpessar  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ablativer / nicht-ablativer kosmetischer Eingriff (tiefer Peeling) in den letzten 3 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Aktive Kollagenerkrankungen, Sklerodem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Herz-Kreislauf-Erkrankungen, Krampfadern   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">IVF-Verfahren   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Akute Neuralgie und Neuropathie    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Blutkrankheiten, Blutungsgefahr, blutendes Gewebe, Magengeschwüre    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ekzem oder Rosazea   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Nieren- oder Leberversagen    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ausgeprägte Ödeme, Aszites, Exsudate    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Tuberkulose   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Sexuell übertragbare Infektion    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+
+Mir ist bekannt, dass Schwangerschaft und Stillen kontraindiziert sind und schwangere Frauen sich der Behandlung nicht unterziehen dürfen.<br/><br/>
+Mir ist bekannt, dass mit den Behandlungen mit dem BTL Exilis-System bestimmte Risiken verbunden sind, unter anderem Rötungen, sehr intensives Wärmegefühl oder leichte Schmerzen und trockene Haut. * Mir ist bekannt, dass die Behandlung das Risiko von Komplikationen oder Verletzungen aus bekannten oder unbekannten Gründen mit sich bringen kann, und ich übernehme diese Risiken freiwillig.<br/><br/>
+Ich bin damit einverstanden, dass ich vor und nach der Behandlung fotografiert, gemessen und gewogen werde, da dies für die medizinische Bewertung der Behandlungsergebnisse hilfreich ist. Die Informationen werden für medizinische Aufzeichnungen oder Marketingzwecke erfasst.<br/><br/>
+Ich verstehe, dass die Ergebnisse von Person zu Person variieren können und dass ein genaues Ergebnis nicht vorhergesagt werden kann. Es ist sehr unwahrscheinlich, aber es ist möglich, dass Sie nach dem Eingriff kein erkennbares Ergebnis spüren. Ich nehme zur Kenntnis, dass das Ergebnis möglicherweise nicht meinen Erwartungen entsprechen.<br/><br/>
+Ich bestätige, dass ich dieses Dokument vollständig gelesen habe und dass ich mit allen Bestimmungen einverstanden bin. Ich bestätige, dass ich die Möglichkeit hatte, Fragen zu stellen, und dass diese Fragen vollständig und zu meiner Zufriedenheit beantwortet wurden. Ich habe volles Verständnis für die Behandlungsbedingungen, das Verfahren und mögliche Nebenwirkungen.<br/><br/>
+
+Ich nehme zur Kenntnis, dass meine Sitzung bei einer kurzfristigen Absage, die weniger als 48 Stunden ist, trotzdem vergütet wird. Wenn ich aus gesundheitlichen Bedingungen nicht teilnehmen kann, werde ich ein Attest vorlegen.<br/><br/>
+Ich habe die oben genannten Informationen gelesen und bitte um meine Zustimmung zur Behandlung mit dem BTL Exilis System.<br/><br/>
+
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#000;"><?=$paket;?><br/><?=$fiyat;?></strong>
+</div>
+
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--form-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form3();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<!--exilis-ultra-->
+<? }else if($_GET["tip"]==6) { ?>
+<!--botox-->
+<form id="pktForms-4">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+<br/>
+
+<!--form-->
+<div class="basLine2" style="margin-top:-1px;">
+<img src="img/botox.png" alt="Botox" id="imgs">
+<strong>Patientenaufklärung und Einverständniserklärung 
+zur Behandlung mit Botulinumtoxin Typ A (AZZALURE®)</strong><br/>
+Sehr geehrte Patientin, sehr geehrter Patient,<br/>
+Sie möchten eine Faltenbehandlung mit Botulinumtoxin Typ A (AZZALURE®) durchführen lassen. Vor der 
+Behandlung wird Sie Ihre Ärztin/Ihr Arzt umfassend aufklären und Ihnen mögliche Ergebnisse sowie 
+Risiken und mögliche Komplikationen der Behandlung erläutern. <br/>
+Ihre behandelnde Ärztin/Ihr behandelnder Arzt benötigt Ihre schriftliche Bestätigung, dass Sie über die 
+folgenden Sachverhalte aufgeklärt wurden und sich für eine Behandlung mit AZZALURE® entschieden 
+haben. Dieser Aufklärungsbogen soll helfen, das Gespräch vorzubereiten und die wichtigsten Punkte zu 
+dokumentieren.<br/><br/>
+
+<strong>Informationen zu Botulinumtoxin Typ A (AZZALURE®)</strong><br/>
+Dynamische oder mimische Falten sind Folge der aktiven Muskelbewegung im Gesicht. Botulinumtoxin 
+hemmt die Erregungsübertragung von den Nervenzellen zum Muskel, wodurch die Aktivität des Muskels 
+je nach Dosierung des Wirkstoffes schwächer wird oder ganz ausfällt. Gezielt in die überaktive 
+Muskulatur injiziert, entspannt das Medikament verkrampfte Muskeln für einen Zeitraum von drei bis 
+sechs Monaten und glättet damit zugleich die Falten. Wird die Behandlung fachgerecht durchgeführt, 
+bleibt der natürliche Gesichtsausdruck – entgegen einem weit verbreiteten Vorurteil – erhalten. <br/>
+In der Medizin wird vor allem Botulinumtoxin Typ A, das biotechnologisch gewonnen wird, als 
+hochwirksames verschreibungspflichtiges Medikament eingesetzt – und zwar sowohl zur effektiven und 
+sicheren Behandlung von Falten als auch zur Therapie schwerer neurologischer Bewegungsstörungen. 
+Heute ist Botulinumtoxin Typ A in über 70 Ländern für verschiedene Indikationen (Anwendungsbereiche) 
+zugelassen. Botulinumtoxin Typ A (AZZALURE®) kann sehr gut mit anderen Methoden der 
+Hautverjüngung kombiniert werden. Bitte sprechen Sie Ihren Arzt an, ob eine Laserbehandlung, ein 
+Eigenfetttransfer oder eine Unterspritzung mit Füllmaterialien wie Hyaluronsäure in Ihrem individuellen 
+Fall am besten geeignet wäre.<br/><br/>
+
+<strong>Für welche Falten ist Botulinumtoxin Typ A besonders gut geeignet?</strong><br/>
+Aufgrund seines Wirkmechanismus (Muskelentspannung) wirkt Botulinumtoxin Typ A besonders gut bei 
+Falten, die durch häufigen, meist unbewussten Muskelzug entstehen. Der klassische Anwendungsbereich 
+für Botulinumtoxin Typ A sind durch Mimik bedingte Falten, also Falten des oberen Gesichtsdrittels, um 
+die Augen und auf der Stirn. Die sichere Anwendung bei neueren Anwendungsbereichen gehört in die 
+Hand erfahrener Ärzte.
+
+<br/><br/>
+<strong>Kann ich nach der Behandlung gleich wieder unter Menschen?</strong><br/>
+Das einzige, was nach einer Botulinumtoxininjektion ersichtlich sein könnte, sind die kleinen 
+Einstichstellen und selten kleinste Blutergüsse, falls feine Hautgefässe verletzt wurden. Diese 
+Veränderungen können auf Wunsch problemlos überschminkt werden und sind spätestens nach 
+wenigen Tagen komplett verschwunden.<br/><br/>
+
+<strong>Gibt es Erfahrungen über die Langzeitwirkungen?</strong><br/>
+Botulinumtoxin Typ A wird seit mehr als 30 Jahren und in relativ hohen Dosen zur Behandlung 
+krankhafter Muskelverkrampfungen (Spasmen) eingesetzt. Aus diesen Erfahrungen weiss man, dass das 
+Medikament keine langfristigen Nebenwirkungen hervorruft. Mikroskopische Untersuchungen konnten 
+zeigen, dass nach dem Abklingen der Botulinumtoxinwirkung keine bleibenden Veränderungen an den 
+Nerven oder Muskeln resultieren, alles sieht wieder aus wie zuvor. Die Behandlung von Falten mit 
+Botulinumtoxin Typ A wird bereits seit 1989 durchgeführt, ohne dass bisher Hinweise für langfristige 
+Nebenwirkungen auftraten. 
+
+<br/><br/>
+
+<strong>Wie schnell wirkt Botulinumtoxin Typ A und wie lange hält die Wirkung an?</strong><br/>
+Botulinumtoxin Typ A wird in einer geringen Menge mit einer sehr dünnen Nadel exakt in die 
+gewünschten Stellen injiziert. Dies führt in der Folge zur Entspannung der überaktiven Muskeln. Im 
+Normalfall beträgt die Zeit zwischen der Injektion und dem Eintreten der ersten Wirkung ca. zwei Tage; 
+die volle Wirkung ist nach ca. zwei Wochen zu sehen. Die Muskelentspannung führt wegen des 
+nachlassenden Muskelzugs auf die Haut zu einer Glättung oder Minderung mimischer Falten. Dieser 
+Effekt hält im Mittel vier Monate an. Wie bei allen medizinischen Eingriffen kann ein zufriedenstellendes 
+Ergebnis nicht garantiert werden. 
+
+<br/><br/>
+
+<strong>Wann darf eine Behandlung nicht durchgeführt werden?</strong><br/>
+Botulinumtoxin Typ A darf nicht angewendet werden bei Personen, bei denen eine Überempfindlichkeit 
+gegen das Arzneimittel oder einen der sonstigen Bestandteile des Arzneimittels besteht oder eine 
+generalisierte Störung der Muskelaktivität vorliegt. Auch bei Infektionen an den vorgesehenen 
+Injektionsstellen, bei bestimmten Virusinfektionen wie Herpes oder bei einer Vorgeschichte von 
+Schluckstörungen soll eine Behandlung nicht durchgeführt werden. Schwangere Frauen und stillende 
+Mütter dürfen aus Vorsicht nicht mit Botulinumtoxin Typ A behandelt werden, wenn allerdings während 
+der Dauer des Botulinumtoxin-Effekts eine Schwangerschaft eintritt, so ist das vollkommen 
+unbedenklich. Bei Einnahme von blutverdünnenden Medikamenten ist das Auftreten von kleinen 
+Blutergüssen wahrscheinlicher, eine Behandlung kann in Absprache mit dem Arzt bei Wunsch dennoch 
+durchgeführt werden. Die Einnahme sonstiger Medikamente ist dem behandelten Arzt zu melden.
+<br/><br/>
+
+<strong>Welche möglichen Nebenwirkungen und Komplikationen gibt es?</strong><br/>
+Langfristige unerwünschte Nebenwirkungen von Botulinumtoxin Typ A sind bisher nicht bekannt. 
+Vergiftungen durch versehentliche Injektionen wurden bisher nicht beobachtet. Die Injektion von 
+Botulinumtoxin Typ A ist im Allgemeinen gut verträglich. Wie bei allen Injektionen kann sich an der 
+Injektionsstelle ein kleiner Bluterguss bilden. <br/><br/>
+
+<span style="font-size:13px;">
+Sonstige Nebenwirkungen, die auftreten können, sind in der Regel vorübergehend. Dazu gehören: <br/>
+<strong>Störungen des Immunsystems</strong><br/>
+Gelegentlich: Überempfindlichkeit<br/>
+<strong>Störungen des Nervensystems</strong><br/>
+Sehr häufig: Kopfschmerzen<br/>
+Häufig: Fazialisparese (überwiegend wird Lidheberparese beschrieben)<br/>
+Gelegentlich: Schwindel
+<br/><br/>
+
+<strong>Augenleiden</strong><br/>
+Häufig: Asthenopie, Ptosis, Lidödeme, vermehrter Tränenfluss, trockenes Auge, Muskelzucken (Zucken 
+der Muskeln in der Umgebung der Augen)<br/>
+Gelegentlich: Sehstörungen, Verschwommensehen, Diplopie, Störung der Augenbewegungen<br/>
+<strong>Funktionsstörungen der Haut und des Unterhautzellgewebes</strong><br/>
+Gelegentlich: Juckreiz, Hautausschlag<br/>
+Selten: Urticaria<br/>
+<strong>Allgemeine Störungen und Reaktionen an der Applikationsstelle</strong><br/>
+Sehr häufig: Reaktionen an der Einstichstelle (z.B. Hautrötung, Ödem, Reizung, Hautausschlag (Rash), 
+Juckreiz, Parästhesien, Schmerzen, Beschwerden, Stechen und Bluterguss<br/><br/>
+</span>
+Bei der Herstellung von Botulinumtoxin Typ A wird hochgereinigtes Humanalbumin verwendet, das für 
+die Verwendung in Humanarzneimitteln freigegeben wurde. Die Möglichkeit der Übertragung 
+infektiöser Agenzien ist daher nach dem heutigen Stand der Wissenschaft weitestgehend 
+ausgeschlossen.
+
+<br/><br/>
+
+
+<strong>Für welche Behandlung ist Botulinumtoxin Typ A zugelassen? </strong><br/>
+In der Schweiz ist Botulinumtoxin Typ A in der ästhetischen Medizin zugelassen zur Behandlung der 
+Glabellafalten (Zornesfalte) und der Lateralen Augenfalten (Krähenfüsse).
+<br/><br/>
+
+<strong>Fragebogen zum aktuellen Gesundheitsstatus</strong><br/>
+Bitte beantworten Sie die nachfolgenden Fragen sorgfältig. Dies ist notwendig, damit Ihre Ärztin/Ihr Arzt 
+etwaige Risiken erkennen und entsprechend handeln kann. Sollten Sie bei der Beantwortung des 
+Fragebogens Zweifel oder Rückfragen haben, besprechen Sie diese bitte mit Ihrer Ärztin/Ihrem Arzt.
+<br/><br/>
+
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Gab es Komplikationen bei früheren Botulinumtoxin Typ A-Behandlungen? </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Gab es Komplikationen bei früheren dermatologischen Behandlungen, z. B. Hautabschleifungen/Chemisches Peeling?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+
+<div style="padding:7px; background-color:#efefef; border-radius:6px;">Bestehen bei Ihnen</div>
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Pigmentstörungen?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Verstärkte Narbenbildungen?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Verstärkte Lichtempfindlichkeit?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Herpes-Infektionen?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Muskelerkrankungen?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;"> Nerven- oder Gemütsleiden (Krampfanfälle, Epilepsie, Lähmungen, Depressionen)?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<div style="padding:7px; background-color:#efefef; border-radius:6px;"></div>
+
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Nehmen Sie aktuell Medikamente ein (z. B. Schmerzmittel, blutverdünnende Medikamente wie z.B. Aspirin®)?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Bestehen bei Ihnen Erkrankungen des Herz-Kreislauf-Systems?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Leiden Sie unter häufigem Nasenbluten, Blutergüssen auch ohne Verletzung?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Liegt eine Erbkrankheit vor wie z.B. angeborene Muskelschwäche?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Sind bei Ihnen Allergien (Heuschnupfen, Asthma) bekannt oder 
+Überempfindlichkeiten gegen kollagenhaltige Produkte (Medikamente, 
+Nahrungsmittel, Latex, Pflaster)?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Hatten Sie Operationen im Gesichtsbereich?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Frauen im gebärfähigen Alter: Könnten Sie schwanger sein oder stillen Sie?</div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#000;"><?=$paket;?><br/><?=$fiyat;?></strong>
+</div>
+
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--form-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form4();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<!--botox-->
+<? }else if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13) {?> 
+<!--paket-1-->
+<form id="pktForms-5">
+<input type="hidden" value="<?=$fiyat;?>" name="fiyat">
+<input type="hidden" value="<?=$paket;?>" name="paket_ad">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="paket">
+<div class="sozlesmeBg">
+<div class="sozlesmeBgIc">
+<div class="basLine"><div>Herr/Frau:</div><div><input type="text" placeholder="Vorname/Nachname" name="isimsoyisim"></div></div>
+<div class="basLine"><div>Adresse:</div><div><input type="text" placeholder="Adresse" name="adres"></div></div>
+<div class="basLine"><div>PLZ/Ort:</div><div><input type="text" placeholder="PLZ/Ort" name="sehir"></div></div>
+<div class="basLine"><div>Telefonnummer:</div><div><input type="text" placeholder="Telefonnummer" name="telefon"></div></div>
+<div class="basLine"><div>E-mail:</div><div><input type="text" placeholder="E-Mail" name="email"></div> </div>
+<input type="hidden" value="<?=$_GET["tip"];?>" name="tip">
+<input type="hidden" value="<?=base64_decode($_GET["id"]);?>" name="seans_id">
+
+<div class="clear"></div>
+<br/>
+
+<!--form-->
+<div class="basLine2" style="margin-top:-1px;">
+<div style="background-color:#f8f8f8; padding:10px; border-radius:15px; font-weight:normal;">
+Die Vergütung beträgt hierbei wie folgt: <br/><strong style="color:#4fb281;"><?=$paket;?></strong><br/><strong style="color:#4fb281;"><?=$paket2;?></strong><br/><span style="color:#000;"><strong>Gesamt :</strong> <?=$fiyat;?></span>
+</div>
+<br/>
+
+<img src="img/vanquish.png" alt="Vanquish me" id="imgs">
+
+Sie sind für eine Reihe von nicht-invasiven Behandlungen mit dem BTL Vanquish ME vorgesehen. Das Gerät ist für den Einsatz bei nicht-invasiven dermatologischen Verfahren vorgesehen. Das BTL Vanquish ME System ist ein Radiofrequenz (RF)-Gerät, das hohe Energie auf kontrollierte Weise an die dermalen und subkutanen Schichten der Haut abgibt.<br/><br/>
+Ihre behandelnde Fachkraft wird mit Ihnen Ihre spezielle Behandlungsbedürfnisse besprechen. Es wird empfohlen, 2-4 Behandlungen im Abstand von 7-14 Tagen durchzuführen. Je nach Schweregrad Ihrer Erkrankung können weitere Behandlungen erforderlich sein. Um optimale Ergebnisse zu erzielen, ist es wichtig, dass Sie sich an den für Sie erstellten Behandlungsplan halten. Die Ergebnisse werden sich in der Regel in den nächsten 3 Monaten nach der letzten Sitzung weiter verbessern.<br/><br/>
+<img src="img/exilis.png" alt="Exilis 360" id="imgs">Die Behandlung ist in der Regel schmerzfrei, und es ist keine Betäubung erforderlich. Sie werden während oder kurz nach der Behandlung ein sehr intensives Wärmegefühl verspüren. Das Verfahren erfordert keine Erholungszeit. In der Regel können Sie direkt nach der Behandlung wieder Ihrem Alltag nachgehen.<br/><br/>
+
+Der zu behandelnde Bereich muss frei von Haaren sein, und es darf kein Make-up oder Cremes/Lotionen auf der Haut vorhanden sein. Ich bestätige, dass mir geraten wurde, den Bereich vor dem Eingriff zu rasieren, oder der Bereich wird bei der Untersuchung rasiert.<br/><br/>
+Wenn der Behandlungsbereich am Körper liegt, kommen Sie bitte gut hydriert zu Ihrem Termin. Idealerweise sollten Sie 2 Tage vor und am Tag der Behandlung Flüssigkeit zu sich nehmen, da dies zu einer angenehmeren und wirksameren Behandlung führt.<br/><br/>
+Am Tag der Behandlung sollten Sie bequeme Kleidung tragen, damit der Behandlungsbereich leicht zugänglich ist. Sie werden gebeten, jeglichen Schmuck an der betreffenden Stelle abzulegen.<br/><br/>
+Ich erkenne an, dass der Behandlungserfolg durch Rauchen oder übermäßigen Alkoholkonsum beeinträchtigt werden kann, ebenso wie durch Essstörungen, laufende Medikamente oder unzureichende Flüssigkeitszufuhr. Auch wenn keine spezielle Diät erforderlich ist, werden Sie aufgefordert, sich gesund zu ernähren, um die Ergebnisse zu fördern und zu erhalten. 
+<br/><br/>
+
+<div style="padding:7px; background-color:#efefef; border-radius:6px;">Bitte geben Sie an, ob Sie gegenwärtig oder in der Vergangenheit eines der folgenden Probleme hatten:</div>
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Bakterielle oder virale Infektionen, akute Entzündungen, fiebrige Zustände  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan1" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Beeinträchtigtes Immunsystem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan2" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Isotretinoin (Aknebehandlung) in den letzten 12 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan3" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Krebs, Strahlentherapie   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan4" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Verbrennungen, Empfindlichkeitsstörungen oder schlechte Heilung im Behandlungsbereich   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan5" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Metall-Implantate   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan6" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Implantierbarer Herzschrittmacher oder automatischer Defibrillator/Kardioverter   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan7" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Intrauterinpessar  </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan8" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ablativer / nicht-ablativer kosmetischer Eingriff (tiefer Peeling) in den letzten 3 Monaten   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan9" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Aktive Kollagenerkrankungen, Sklerodem   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan10" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Herz-Kreislauf-Erkrankungen, Krampfadern   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan11" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">IVF-Verfahren   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan12" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Akute Neuralgie und Neuropathie    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan13" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Blutkrankheiten, Blutungsgefahr, blutendes Gewebe, Magengeschwüre    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan14" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ekzem oder Rosazea   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan15" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Nieren- oder Leberversagen    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan16" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Ausgeprägte Ödeme, Aszites, Exsudate    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan17" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Tuberkulose   </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan18" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+<!--/-->
+<div class="basLine_3">
+<div style="font-weight:normal;">Sexuell übertragbare Infektion    </div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Ja"> Ja</label></div>
+<div style="font-weight:normal;"><label><input type="radio" name="alan19" style="width:20px; height:17px; float:left;" value="Nein"> Nein</label></div>
+</div>
+<!--/-->
+
+
+Mir ist bekannt, dass Schwangerschaft und Stillen kontraindiziert sind und schwangere Frauen sich der Behandlung nicht unterziehen dürfen.<br/><br/>
+Mir ist bekannt, dass mit den Behandlungen mit dem BTL Vanquish ME System bestimmte Risiken verbunden sind, unter anderem Rötungen, sehr intensives Wärmegefühl oder leichte Schmerzen und trockene Haut.<br/><br/>
+Mir ist bekannt, dass die Behandlung das Risiko von Komplikationen oder Verletzungen aus bekannten oder unbekannten Gründen mit sich bringen kann, und ich übernehme diese Risiken freiwillig.<br/><br/>
+Ich bin damit einverstanden, dass ich vor und nach der Behandlung fotografiert, gemessen und gewogen werde, da dies für die medizinische Bewertung der Behandlungsergebnisse hilfreich ist. Die Informationen werden für medizinische Aufzeichnungen oder Marketingzwecke erfasst.<br/><br/>
+Ich verstehe, dass die Ergebnisse von Person zu Person variieren können und dass ein genaues Ergebnis nicht vorhergesagt werden kann. Es ist sehr unwahrscheinlich, aber es ist möglich, dass Sie nach dem Eingriff kein erkennbares Ergebnis spüren. Ich nehme zur Kenntnis, dass das Ergebnis möglicherweise nicht meinen Erwartungen entsprechen kann.<br/><br/>
+Ich bestätige, dass ich dieses Dokument vollständig gelesen habe und dass ich mit allen Bestimmungen einverstanden bin. Ich bestätige, dass ich die Möglichkeit hatte, Fragen zu stellen, und dass diese Fragen vollständig und zu meiner Zufriedenheit beantwortet wurden. Ich habe volles Verständis für die Behandlungsbedingungen, das Verfahren und mögliche Nebenwirkungen.<br/><br/>
+Ich nehme zur Kenntnis, dass meine Sitzung bei einer kurzfristigen Absage, die weniger als 48 Stunden ist, trotzdem vergütet wird. Wenn ich aus gesundheitlichen Bedingungen nicht teilnehmen kann, werde ich ein Attest vorlegen.
+
+
+
+</div>
+
+<br/>
+<div class="basLine"><div>Datum:</div><div><input type="text" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>" disabled><input type="hidden" placeholder="Datum" name="tarih" value="<? echo strftime("%d/%m/%Y"); ?>"></div></div>
+<!--form-->
+
+
+</div>
+</div>
+
+<div class="onay trans">
+<label>
+<div><input type="checkbox" name="onays"></div>
+<span>Ja, ich stimme den <a href="agb.html" title="AGB" target="_blank" style="color:#a61717;"><strong>AGB</strong></a> und den <a href="datenschutz.html" title="Datenschutz" target="_blank" style="color:#a61717;"><strong>Datenschutz</strong></a> zu. </span>
+</label>
+</div>
+
+<div id="devam" onClick="form5();" style="width:120px; font-size:16px;">Bestätigung</div>
+</form>
+<!--paket-1-->
+<? } ?>
+
+<div id="uyari-form"></div>
+</div>
+<!--step-1-->
+
+<?  }elseif($_GET["step"]==2) {?>
+
+<? if($_GET["tip"]==4) {  ?>
+
+<? if(base64_decode($_GET["id"])==4) { $paket="Vanquish Me"; $fiyat="1300€"; $odeme="1300"; $seans ="4 Sitzungen"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Vanquish Me"; $fiyat="1550€"; $odeme="1550"; $seans ="4+2 Sitzungen"; } ?>
+
+<? }else if($_GET["tip"]==5) { ?>
+
+<? if(base64_decode($_GET["id"])==4) { $paket="Exilis Ultra 360"; $fiyat="1000€"; $odeme="1000"; $seans ="4 Sitzungen"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Exilis Ultra 360"; $fiyat="1150€"; $odeme="1150"; $seans ="6 Sitzungen"; } ?>
+
+<? if(base64_decode($_GET["id"])==6) { $paket="Exilis Ultra 360 "; $fiyat="500€"; $odeme="500"; $seans ="Gesicht und Dekolte 4 Sitzungen"; } ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Exilis Ultra 360 "; $fiyat="700€"; $odeme="700"; $seans ="Gesicht und Dekolte 6 Sitzungen"; } ?>
+
+
+<? } ?>
+
+
+<div class="hCont" id="down-1">
+<div class="pagMotto"><?=$paket;?></div>
+<div class="pagBas-2" style="text-align:left;">Formular <strong>Bestätigung</strong> </div>
+<br/>
+
+
+<div class="formOrt_2" id="form" style="text-align:center;">
+
+<div class="bOnay" style="line-height:50px;">wir haben Ihre <strong>Anfrage</strong> erhalten!</div>
+<i class="fa fa-envelope-o" style="font-size:42px; color:#4bb854"></i><br/><br/>
+<strong>Vielen Dank</strong> für das Ausfüllen des Online-Formulars. <br/>
+Unser Team wird sich so schnell wie möglich mit Ihnen in Verbindung setzen, um einen Termin zu vereinbaren.<br/><br/>
+Ihr Formular wurde per <strong>E-Mail</strong> versandt.<br/>
+
+<br/>
+<div class="bOnay" style="line-height:50px;">Bitte schließen Sie Ihre <strong>Zahlung</strong> ab!</div>
+<div class="bList" style="text-align:center; line-height:15px;"><strong>Produkt :</strong>  <?=$paket;?> <?=$seans;?></div>
+<div class="bList" style="text-align:center; line-height:15px;"><strong>Gesamtpreis :</strong> <?=$odeme;?>€</div>
+<div id="p4"></div>
+<br/>
+
+
+<!--paypal-->
+<div id="paypal-button-container"></div>
+<div class="bOnay_2 md-trigger" data-modal="modal-1"><div><i class="fa fa-caret-right"></i> Vorkasse</div><span>Zahlung per Vorkasse (Überweisung)</span></div>
+<div id="uyari-form3" style="margin-bottom:-0px; background-color:#fafafa; border-radius:4px;"></div>
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=ATTSv-MrC2PieI5m3a69XG21XU4GM3ynkcchr8iIabW2p26eiOjJMOy3qmS3dhD4xhBVuCcgsvwVpubL&disable-card=jcb&disable-funding=credit,sepa,sofort&currency=EUR&intent=capture" data-sdk-integration-source="button-factory"></script>
+<script>
+paypal.Buttons({
+style: {
+shape: 'rect',
+color: 'gold',
+layout: 'vertical',
+label: 'pay',
+
+},
+createOrder: function(data, actions) {
+return actions.order.create({
+purchase_units: [{
+amount: {
+description:'Test Magic',
+value: <?=$odeme;?>
+}
+}]
+});
+},
+onApprove: function(data, actions) {
+return actions.order.capture().then(function(details) {
+
+document.getElementById("p4").innerHTML = '<div class="bOnay" style="line-height:45px; margin-left:15px; margin-right:15px;">Ihre Zahlung wurde <strong>bestätigt!</strong></div>';
+
+setTimeout(function (){
+window.location.href = "termin.html?step=4";
+},0);
+
+		  
+});
+}
+})
+
+.render('#paypal-button-container');
+</script>
+<style>#p4 {display:none;}</style>
+<!--vorkasse-->
+    <div class="md-modalPkt md-effect-2" id="modal-1">
+      <div class="md-content">
+        <h3><i class="fa fa-caret-right"></i> Vorkasse </h3>
+		     <button class="md-close"><i class="fa fa-close"></i></button>
+        <div>
+		<br/>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Empfänger:</strong> Cagla Aytac GmbH</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Iban:</strong> DE43 4416 0014 6613 5530 00</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>BIC:</strong> GENODEM1DOR</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Verwendungszweck:</strong> Vor und Nachname </div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Dortmunder Volksbank</strong></div>
+
+       </div>
+    </div>
+   </div>
+<!--vorkasse-->
+<div class="md-overlay"></div>
+<!--paypal-->
+</div>
+
+</div>
+
+
+<?
+if($_GET["tip"]==3) {
+?>
+<? if(base64_decode($_GET["id"])==1) { $paket="Rasping"; $fiyat="1 Sitzungen ingesamt 129€"; $odeme="129"; $seans_ad ="1 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Rasping"; $fiyat="5 Sitzungen ingesamt 499€"; $odeme="499"; $seans_ad ="5 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==6) { $paket="Rasping"; $fiyat="6 Sitzungen ingesamt 799€"; $odeme="799"; $seans_ad ="6 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==8) { $paket="Rasping"; $fiyat="10 Sitzungen ingesamt 799€"; $odeme="799"; $seans_ad ="10 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==9) { $paket="Rasping"; $fiyat="Nur das Kinn ingesamt 50€"; $odeme="50"; $seans_ad ="Nur das Kinn"; }  ?>
+
+<?
+$linklex = 'paket.html?id='.$_GET["id"].'&step=3&tip='.$_GET["tip"].'&line1='.base64_encode("Rasping").'';
+header('Location:'.$linklex.'');
+
+$bulunacak_2 = array('ç','Ç','ı','İ','ğ','Ğ','ü','ö','Ş','ş','Ö','Ü',',','/',' ','(',')','[',']'); 
+$degistir_2  = array('c','C','i','I','g','G','u','o','S','s','O','U','','-',' ','','','','');
+//mail_fonksiyon
+$dosya_ismi = strftime("%d-%m-%Y")."-".str_replace($bulunacak_2, $degistir_2, base64_decode($_GET["line1"]));
+require("init/class.phpmailer.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();                                   
+$mail->CharSet  ="utf-8";
+$mail->Host     = "n3plcpnl0041.prod.ams3.secureserver.net"; 
+$mail->SMTPAuth = true;     
+$mail->IsHTML(true); 
+$mail->Username = "site@caglaaytac.de";  
+$mail->Password = "1f2g1f2g@"; 
+
+$mail->SetFrom("info@caglaaytac.de", "Çağla Aytaç");
+$mail->Fromname = "Müşteri";
+$mail->AddAddress(base64_decode($_GET["line4"]));
+$mail->AddCC('caglaaytacgmbh@gmail.com', 'Çağla Aytaç');
+$mail->AddBCC('admin@caglaaytac.de', 'Çağla Aytaç');
+$mail->Subject  =  "Çağla Aytaç - Rasping Online Formular";
+$mail->AddAttachment('vertrag/rasping/'.$dosya_ismi.'-Rasping-Form.pdf');
+
+$mail->Body = '
+<img src="https://caglaaytac.de/img/caglaaytac-logo.png" alt="Çağla Aytaç" width="280" style="padding:15px;"><br/><br/>
+<div style="padding:5px; margin-left:20px;">
+
+Formular <strong>Bestätigung</strong><br/><br/>
+
+<strong>Rasping :</strong> '.$seans_ad.'<br/>
+<strong>Gesamtpreis :</strong> '.$odeme.'€<br/><br/>
+
+<div style="padding:5px; background-color:#efefef; width:200px; margin-left:-3px;">
+'.base64_decode($_GET["line1"]).'<br/>
+'.base64_decode($_GET["line5"]).'
+</div>
+<br/><br/>
+
+Ihr <strong>Formular</strong> ist beigefügt.
+
+<br/><br/>
+wir danken Ihnen!<br/><br/>
+<a href="https://caglaaytac.de">www.caglaaytac.de</a>
+</div>
+';
+ 
+if(!$mail->Send()) {
+   echo "Mesaj Gönderilemedi <p>";
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   exit;
+} ?>
+
+
+<? }else if($_GET["tip"]==4) { ?>
+
+
+<? if(base64_decode($_GET["id"])==4) { $paket="Vanquish Me"; $fiyat="4 Sitzungen ingesamt 1300€"; $odeme="1300"; $seans_ad ="4 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Vanquish Me"; $fiyat="4+2 Sitzungen ingesamt 1550€"; $odeme="1550"; $seans_ad ="4+2 Sitzungen"; } ?>
+
+
+
+
+<?
+//$linkles = 'paket.html?id='.$_GET["id"].'&step=3&tip='.$_GET["tip"].'&line1='.base64_encode("Vanquish Me").'';
+//header('Location:'.$linkles.'');
+
+$bulunacak_2 = array('ç','Ç','ı','İ','ğ','Ğ','ü','ö','Ş','ş','Ö','Ü',',','/',' ','(',')','[',']'); 
+$degistir_2  = array('c','C','i','I','g','G','u','o','S','s','O','U','','-',' ','','','','');
+//mail_fonksiyon
+$dosya_ismi = strftime("%d-%m-%Y")."-".str_replace($bulunacak_2, $degistir_2, base64_decode($_GET["line1"]));
+require("init/class.phpmailer.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();                                   
+$mail->CharSet  ="utf-8";
+$mail->Host     = "n3plcpnl0041.prod.ams3.secureserver.net"; 
+$mail->SMTPAuth = true;     
+$mail->IsHTML(true); 
+$mail->Username = "site@caglaaytac.de";  
+$mail->Password = "1f2g1f2g@"; 
+
+$mail->SetFrom("info@caglaaytac.de", "Çağla Aytaç");
+$mail->Fromname = "Müşteri";
+$mail->AddAddress(base64_decode($_GET["line4"]));
+$mail->AddCC('caglaaytacgmbh@gmail.com', 'Çağla Aytaç');
+$mail->AddBCC('admin@caglaaytac.de', 'Çağla Aytaç');
+$mail->Subject  =  "Çağla Aytaç - Vanquish Me Online Formular";
+$mail->AddAttachment('vertrag/vanquish/'.$dosya_ismi.'-Vanquish-Me-Form.pdf');
+
+$mail->Body = '
+<img src="https://caglaaytac.de/img/caglaaytac-logo.png" alt="Çağla Aytaç" width="280" style="padding:15px;"><br/><br/>
+<div style="padding:5px; margin-left:20px;">
+
+Formular <strong>Bestätigung</strong><br/><br/>
+
+<strong>Vanquish Me :</strong> '.$seans_ad.'<br/>
+<strong>Gesamtpreis :</strong> '.$odeme.'€<br/><br/>
+
+<div style="padding:5px; background-color:#efefef; width:200px; margin-left:-3px;">
+'.base64_decode($_GET["line1"]).'<br/>
+'.base64_decode($_GET["line5"]).'
+</div>
+<br/><br/>
+
+Ihr <strong>Formular</strong> ist beigefügt.
+
+<br/><br/>
+wir danken Ihnen!<br/><br/>
+<a href="https://caglaaytac.de">www.caglaaytac.de</a>
+</div>
+';
+ 
+if(!$mail->Send()) {
+   echo "Mesaj Gönderilemedi <p>";
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   exit;
+}?>
+
+
+<? }else if($_GET["tip"]==5) { ?>
+
+
+<? if(base64_decode($_GET["id"])==4) { $paket="Exilis Ultra 360"; $fiyat="4 Sitzungen ingesamt 1000€"; $odeme="1000"; $seans_ad ="4 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Exilis Ultra 360"; $fiyat="4+2 Sitzungen ingesamt 1150€"; $odeme="1150"; $seans_ad ="4+2 Sitzungen"; } ?>
+<? if(base64_decode($_GET["id"])==6) { $paket="Exilis Ultra 360"; $fiyat="Gesicht und Dekolte 4 Sitzungen ingesamt 500€"; $odeme="500"; $seans_ad ="Gesicht und Dekolte 4 Sitzungen"; }  ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Exilis Ultra 360"; $fiyat="Gesicht und Dekolte 4+2 Sitzungen ingesamt 700€"; $odeme="700"; $seans_ad ="Gesicht und Dekolte 4+2 Sitzungen"; } ?>
+
+<?
+//$linklex = 'paket.html?id='.$_GET["id"].'&step=3&tip='.$_GET["tip"].'&line1='.base64_encode("Exilis Ultra 360").'';
+//header('Location:'.$linklex.'');
+
+$bulunacak_2 = array('ç','Ç','ı','İ','ğ','Ğ','ü','ö','Ş','ş','Ö','Ü',',','/',' ','(',')','[',']'); 
+$degistir_2  = array('c','C','i','I','g','G','u','o','S','s','O','U','','-',' ','','','','');
+//mail_fonksiyon
+$dosya_ismi = strftime("%d-%m-%Y")."-".str_replace($bulunacak_2, $degistir_2, base64_decode($_GET["line1"]));
+require("init/class.phpmailer.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();                                   
+$mail->CharSet  ="utf-8";
+$mail->Host     = "n3plcpnl0041.prod.ams3.secureserver.net"; 
+$mail->SMTPAuth = true;     
+$mail->IsHTML(true); 
+$mail->Username = "site@caglaaytac.de";  
+$mail->Password = "1f2g1f2g@"; 
+
+$mail->SetFrom("info@caglaaytac.de", "Çağla Aytaç");
+$mail->Fromname = "Müşteri";
+$mail->AddAddress(base64_decode($_GET["line4"]));
+$mail->AddCC('caglaaytacgmbh@gmail.com', 'Çağla Aytaç');
+$mail->AddBCC('admin@caglaaytac.de', 'Çağla Aytaç');
+$mail->Subject  =  "Çağla Aytaç - Exilis Ultra 360 Online Formular";
+$mail->AddAttachment('vertrag/exilis/'.$dosya_ismi.'-Exilis-Ultra-Form.pdf');
+
+$mail->Body = '
+<img src="https://caglaaytac.de/img/caglaaytac-logo.png" alt="Çağla Aytaç" width="280" style="padding:15px;"><br/><br/>
+<div style="padding:5px; margin-left:20px;">
+
+Formular <strong>Bestätigung</strong><br/><br/>
+
+<strong>Exilis Ultra 360 :</strong> '.$seans_ad.'<br/>
+<strong>Gesamtpreis :</strong> '.$odeme.'€<br/><br/>
+
+<div style="padding:5px; background-color:#efefef; width:200px; margin-left:-3px;">
+'.base64_decode($_GET["line1"]).'<br/>
+'.base64_decode($_GET["line5"]).'
+</div>
+<br/><br/>
+
+Ihr <strong>Formular</strong> ist beigefügt.
+
+<br/><br/>
+wir danken Ihnen!<br/><br/>
+<a href="https://caglaaytac.de">www.caglaaytac.de</a>
+</div>
+';
+ 
+if(!$mail->Send()) {
+   echo "Mesaj Gönderilemedi <p>";
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   exit;
+}?>
+
+<? }else if($_GET["tip"]==6) { ?>
+
+
+<? if(base64_decode($_GET["id"])==1) { $paket="Botox"; $fiyat="1 zone 150€"; $odeme="150"; $seans_ad ="1 zone"; }  ?>
+<? if(base64_decode($_GET["id"])==2) { $paket="Botox"; $fiyat="2 zonen 250€"; $odeme="250"; $seans_ad ="2 zonen"; } ?>
+<? if(base64_decode($_GET["id"])==3) { $paket="Botox"; $fiyat="3 zonen 350€"; $odeme="350"; $seans_ad ="3 zonen"; }  ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Botox"; $fiyat="4 zonen 400€"; $odeme="400"; $seans_ad ="4 zonen"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Botox"; $fiyat="Achsel 350€"; $odeme="450"; $seans_ad ="Achsel"; } ?>
+
+<?
+$linklex = 'paket.html?id='.$_GET["id"].'&step=3&tip='.$_GET["tip"].'&line1='.base64_encode("Botox").'';
+header('Location:'.$linklex.'');
+
+$bulunacak_2 = array('ç','Ç','ı','İ','ğ','Ğ','ü','ö','Ş','ş','Ö','Ü',',','/',' ','(',')','[',']'); 
+$degistir_2  = array('c','C','i','I','g','G','u','o','S','s','O','U','','-',' ','','','','');
+//mail_fonksiyon
+$dosya_ismi = strftime("%d-%m-%Y")."-".str_replace($bulunacak_2, $degistir_2, base64_decode($_GET["line1"]));
+require("init/class.phpmailer.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();                                   
+$mail->CharSet  ="utf-8";
+$mail->Host     = "n3plcpnl0041.prod.ams3.secureserver.net"; 
+$mail->SMTPAuth = true;     
+$mail->IsHTML(true); 
+$mail->Username = "site@caglaaytac.de";  
+$mail->Password = "1f2g1f2g@"; 
+
+$mail->SetFrom("info@caglaaytac.de", "Çağla Aytaç");
+$mail->Fromname = "Müşteri";
+$mail->AddAddress(base64_decode($_GET["line4"]));
+$mail->AddCC('caglaaytacgmbh@gmail.com', 'Çağla Aytaç');
+$mail->AddBCC('admin@caglaaytac.de', 'Çağla Aytaç');
+$mail->Subject  =  "Çağla Aytaç - Botox Online Formular";
+$mail->AddAttachment('vertrag/botox/'.$dosya_ismi.'-Botox-Form.pdf');
+
+$mail->Body = '
+<img src="https://caglaaytac.de/img/caglaaytac-logo.png" alt="Çağla Aytaç" width="280" style="padding:15px;"><br/><br/>
+<div style="padding:5px; margin-left:20px;">
+
+Formular <strong>Bestätigung</strong><br/><br/>
+
+<strong>Botox :</strong> '.$seans_ad.'<br/>
+<strong>Gesamtpreis :</strong> '.$odeme.'€<br/><br/>
+
+<div style="padding:5px; background-color:#efefef; width:200px; margin-left:-3px;">
+'.base64_decode($_GET["line1"]).'<br/>
+'.base64_decode($_GET["line5"]).'
+</div>
+<br/><br/>
+
+Ihr <strong>Formular</strong> ist beigefügt.
+
+<br/><br/>
+wir danken Ihnen!<br/><br/>
+<a href="https://caglaaytac.de">www.caglaaytac.de</a>
+</div>
+';
+ 
+if(!$mail->Send()) {
+   echo "Mesaj Gönderilemedi <p>";
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   exit;
+}?>
+
+<? }else if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13) { ?>
+
+
+<? if(base64_decode($_GET["id"])==1) { $paket="Abnehmprogramm mit nicht operativer Liposuction und Straffung"; $fiyat="2600€";  $odeme="2600"; $seans_ad ="Paket 3"; }  ?>
+<? if(base64_decode($_GET["id"])==2) { $paket="Abnehmprogramm Basic"; $fiyat="1500€"; $odeme="1500"; $seans_ad ="Paket 4"; } ?>
+<? if(base64_decode($_GET["id"])==3) { $paket="Abnehmpaket mit nicht operativer Liposuction und gleichzeitiger Muskelaufbau"; $fiyat="2900€"; $odeme="2900"; $seans_ad ="Paket 5"; } ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Abnehmprogramm Basic"; $fiyat="1000€"; $odeme="1000"; $seans_ad ="Paket 1"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Abnehmprogramm mit nicht operativer Liposuction"; $fiyat="2200€"; $odeme="2200"; $seans_ad ="Paket 2"; } ?>
+
+<? if(base64_decode($_GET["id"])==6) { $paket="Abnehmprogramm für Körper"; $fiyat="999€"; $odeme="999"; $seans_ad ="Gesicht Paket 1"; } ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Abnehmprogramm für Körper"; $fiyat="1599€"; $odeme="1599"; $seans_ad ="Gesicht Paket 2"; } ?>
+
+
+<?
+$linklex = 'paket.html?id='.$_GET["id"].'&step=3&tip='.$_GET["tip"].'&line1='.base64_encode("Botox").'';
+header('Location:'.$linklex.'');
+
+$bulunacak_2 = array('ç','Ç','ı','İ','ğ','Ğ','ü','ö','Ş','ş','Ö','Ü',',','/',' ','(',')','[',']'); 
+$degistir_2  = array('c','C','i','I','g','G','u','o','S','s','O','U','','-',' ','','','','');
+//mail_fonksiyon
+$dosya_ismi = strftime("%d-%m-%Y")."-".str_replace($bulunacak_2, $degistir_2, base64_decode($_GET["line1"]));
+require("init/class.phpmailer.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();                                   
+$mail->CharSet  ="utf-8";
+$mail->Host     = "n3plcpnl0041.prod.ams3.secureserver.net"; 
+$mail->SMTPAuth = true;     
+$mail->IsHTML(true); 
+$mail->Username = "site@caglaaytac.de";  
+$mail->Password = "1f2g1f2g@"; 
+
+$mail->SetFrom("info@caglaaytac.de", "Çağla Aytaç");
+$mail->Fromname = "Müşteri";
+$mail->AddAddress(base64_decode($_GET["line4"]));
+$mail->AddCC('caglaaytacgmbh@gmail.com', 'Çağla Aytaç');
+$mail->AddBCC('admin@caglaaytac.de', 'Çağla Aytaç');
+$mail->Subject  =  "Çağla Aytaç - Abnehmprogramm Online Formular";
+$mail->AddAttachment('vertrag/paket/'.$dosya_ismi.'-Abnehmprogramm-Form.pdf');
+
+$mail->Body = '
+<img src="https://caglaaytac.de/img/caglaaytac-logo.png" alt="Çağla Aytaç" width="280" style="padding:15px;"><br/><br/>
+<div style="padding:5px; margin-left:20px;">
+
+Formular <strong>Bestätigung</strong><br/><br/>
+
+<strong>Abnehmprogramm :</strong> '.$seans_ad.'<br/>
+<strong>Gesamtpreis :</strong> '.$odeme.'€<br/><br/>
+
+<div style="padding:5px; background-color:#efefef; width:200px; margin-left:-3px;">
+'.base64_decode($_GET["line1"]).'<br/>
+'.base64_decode($_GET["line5"]).'
+</div>
+<br/><br/>
+
+Ihr <strong>Formular</strong> ist beigefügt.
+
+<br/><br/>
+wir danken Ihnen!<br/><br/>
+<a href="https://caglaaytac.de">www.caglaaytac.de</a>
+</div>
+';
+ 
+if(!$mail->Send()) {
+   echo "Mesaj Gönderilemedi <p>";
+   echo "Mailer Error: " . $mail->ErrorInfo;
+   exit;
+}?>
+<? } ?>
+
+
+<?  }elseif($_GET["step"]==3) {?>
+
+
+<? if(base64_decode($_GET["id"])==1) { $paket="Abnehmprogramm mit nicht operativer Liposuction und Straffung"; $fiyat="2600€";  $odeme="2600"; $seans_ad ="Paket 3"; }  ?>
+<? if(base64_decode($_GET["id"])==2) { $paket="Abnehmprogramm Basic"; $fiyat="1500€"; $odeme="1500"; $seans_ad ="Paket 4"; } ?>
+<? if(base64_decode($_GET["id"])==3) { $paket="Abnehmpaket mit nicht operativer Liposuction und gleichzeitiger Muskelaufbau "; $fiyat="2900€"; $odeme="2900"; $seans_ad ="Paket 5"; } ?>
+<? if(base64_decode($_GET["id"])==4) { $paket="Abnehmprogramm Basic"; $fiyat="1000€"; $odeme="1000"; $seans_ad ="Paket 1"; } ?>
+<? if(base64_decode($_GET["id"])==5) { $paket="Abnehmprogramm mit nicht operativer Liposuction"; $fiyat="2200€"; $odeme="2200"; $seans_ad ="Paket 2"; } ?>
+
+<? if(base64_decode($_GET["id"])==6) { $paket="Abnehmprogramm für Körper"; $fiyat="999€"; $odeme="999"; $seans_ad ="Gesicht Paket 1"; } ?>
+<? if(base64_decode($_GET["id"])==7) { $paket="Abnehmprogramm für Körper "; $fiyat="1599€"; $odeme="1599"; $seans_ad ="Gesicht Paket 2"; } ?>
+
+<!--step-3-->
+<div class="hCont" id="down-1">
+<div class="pagMotto"><? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13) {?> Abnehmprogramm <? }else{?><?=$paket;?> <?}?></div>
+<div class="pagBas-2" style="text-align:left;"><? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13) {?> Zahlart<? }else{?> Formular <strong>Bestätigung<? } ?></strong> </div>
+<br/>
+
+<div class="formOrt_2" id="form" style="text-align:center;">
+
+
+<? if($_GET["tip"]==7 or $_GET["tip"]==8 or $_GET["tip"]==9 or $_GET["tip"]==10 or $_GET["tip"]==11 or $_GET["tip"]==12 or $_GET["tip"]==13) {?>
+
+<div class="bOnay" style="line-height:50px;">wir haben Ihre <strong>Anfrage</strong> erhalten!</div>
+<i class="fa fa-envelope-o" style="font-size:42px; color:#4bb854"></i><br/><br/>
+<strong>Vielen Dank</strong> für das Ausfüllen des Online-Formulars. <br/>
+Unser Team wird sich so schnell wie möglich mit Ihnen in Verbindung setzen, um einen Termin zu vereinbaren.<br/><br/>
+Ihr Formular wurde per <strong>E-Mail</strong> versandt.<br/>
+
+<br/>
+<div class="bOnay" style="line-height:50px;">Bitte schließen Sie Ihre <strong>Zahlung</strong> ab!</div>
+<div class="bList" style="text-align:center; line-height:15px;"><strong>Produkt :</strong> Abnehmprogramm  <?=$seans_ad;?></div>
+<div class="bList" style="text-align:center; line-height:15px;"><strong>Gesamtpreis :</strong> <?=$odeme;?>€</div>
+<div id="p4"></div>
+<br/>
+
+
+<!--paypal-->
+<div id="paypal-button-container"></div>
+<div class="bOnay_2 md-trigger" data-modal="modal-1"><div><i class="fa fa-caret-right"></i> Vorkasse</div><span>Zahlung per Vorkasse (Überweisung)</span></div>
+<div id="uyari-form3" style="margin-bottom:-0px; background-color:#fafafa; border-radius:4px;"></div>
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=ATTSv-MrC2PieI5m3a69XG21XU4GM3ynkcchr8iIabW2p26eiOjJMOy3qmS3dhD4xhBVuCcgsvwVpubL&disable-card=jcb&disable-funding=credit,sepa,sofort&currency=EUR&intent=capture" data-sdk-integration-source="button-factory"></script>
+<script>
+paypal.Buttons({
+style: {
+shape: 'rect',
+color: 'gold',
+layout: 'vertical',
+label: 'pay',
+
+},
+createOrder: function(data, actions) {
+return actions.order.create({
+purchase_units: [{
+amount: {
+description:'Test Magic',
+value: <?=$odeme;?>
+}
+}]
+});
+},
+onApprove: function(data, actions) {
+return actions.order.capture().then(function(details) {
+
+document.getElementById("p4").innerHTML = '<div class="bOnay" style="line-height:45px; margin-left:15px; margin-right:15px;">Ihre Zahlung wurde <strong>bestätigt!</strong></div>';
+
+setTimeout(function (){
+window.location.href = "termin.html?step=4";
+},0);
+
+		  
+});
+}
+})
+
+.render('#paypal-button-container');
+</script>
+<style>#p4 {display:none;}</style>
+<!--vorkasse-->
+    <div class="md-modalPkt md-effect-2" id="modal-1">
+      <div class="md-content">
+        <h3><i class="fa fa-caret-right"></i> Vorkasse </h3>
+		     <button class="md-close"><i class="fa fa-close"></i></button>
+        <div>
+		<br/>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Empfänger:</strong> Cagla Aytac GmbH</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Iban:</strong> DE43 4416 0014 6613 5530 00</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>BIC:</strong> GENODEM1DOR</div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Verwendungszweck:</strong> Vor und Nachname </div>
+<div style="font-size:15px; line-height:35px; border-bottom:solid 1px #efefef;"><strong>Dortmunder Volksbank</strong></div>
+
+       </div>
+    </div>
+   </div>
+<!--vorkasse-->
+<div class="md-overlay"></div>
+<!--paypal-->
+
+<? }else{ ?>
+<div class="bOnay" style="line-height:50px;">wir haben Ihre <strong>Anfrage</strong> erhalten!</div>
+<i class="fa fa-envelope-o" style="font-size:42px; color:#4bb854"></i><br/><br/>
+<strong>Vielen Dank</strong> für das Ausfüllen des Online-Formularsss. <br/>
+Unser Team wird sich so schnell wie möglich mit Ihnen in Verbindung setzen, um einen Termin zu vereinbaren.<br/><br/>
+Ihr Formular wurde per <strong>E-Mail</strong> versandt.<br/>
+
+
+<? } ?>
+
+
+</div>
+
+</div>
+<!--step-3-->
+
+
+<? } $linkle="ajax/rasping-form.php"; $linkle2="ajax/vanquish-form.php"; $linkle3="ajax/exilis-form.php"; $linkle4="ajax/botox-form.php"; $linkle5="ajax/paket-form.php";?>
+
+
+<div class="clear"></div>
+
+
+<br/><br/><br/>
+
+
+<? include("init/foot.php"); ?>
+
+<div id="Yukari"><i class="fa fa-angle-up"></i></div>
+<script type="text/javascript" src="jquery/classie.js"></script>
+<script type="text/javascript" src="jquery/modalEffects.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("#Yukari").click(function() {
+	  $("html,body").stop().animate({ scrollTop: "0" }, 1000);
+  });
+});
+$(window).scroll(function() {
+  var uzunluk = $(document).scrollTop();
+  if (uzunluk > 300) $("#Yukari").fadeIn(500);
+  else { $("#Yukari").fadeOut(500); }
+});
+function form1(){
+$('#uyari-form').slideDown('slow');
+$("#uyari-form").html('<img src="img/yukleniyor.gif" alt="Yükleniyor">');
+$.ajax({
+type:'POST',
+url:'<?=$linkle;?>',
+data:$('#pktForms').serialize(),
+success:function(cevap){  
+$("#uyari-form").html(cevap)
+}
+})
+}
+function form2(){
+$('#uyari-form').slideDown('slow');
+$("#uyari-form").html('<img src="img/yukleniyor.gif" alt="Yükleniyor">');
+$.ajax({
+type:'POST',
+url:'<?=$linkle2;?>',
+data:$('#pktForms-2').serialize(),
+success:function(cevap){  
+$("#uyari-form").html(cevap)
+}
+})
+}
+function form3(){
+$('#uyari-form').slideDown('slow');
+$("#uyari-form").html('<img src="img/yukleniyor.gif" alt="Yükleniyor">');
+$.ajax({
+type:'POST',
+url:'<?=$linkle3;?>',
+data:$('#pktForms-3').serialize(),
+success:function(cevap){  
+$("#uyari-form").html(cevap)
+}
+})
+}
+function form4(){
+$('#uyari-form').slideDown('slow');
+$("#uyari-form").html('<img src="img/yukleniyor.gif" alt="Yükleniyor">');
+$.ajax({
+type:'POST',
+url:'<?=$linkle4;?>',
+data:$('#pktForms-4').serialize(),
+success:function(cevap){  
+$("#uyari-form").html(cevap)
+}
+})
+}
+function form5(){
+$('#uyari-form').slideDown('slow');
+$("#uyari-form").html('<img src="img/yukleniyor.gif" alt="Yükleniyor">');
+$.ajax({
+type:'POST',
+url:'<?=$linkle5;?>',
+data:$('#pktForms-5').serialize(),
+success:function(cevap){  
+$("#uyari-form").html(cevap)
+}
+})
+}
+</script>
+
+</body>
+</html>
