@@ -1,2 +1,5 @@
-# test
- test
+# Zaligo.de
+ - Kayıt
+ - Giriş
+ - Kategorileme
+ - Ürün Detay
